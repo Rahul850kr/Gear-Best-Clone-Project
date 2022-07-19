@@ -1,0 +1,42 @@
+.usaimage{
+    width: 22px;
+    border: 1px solid red;
+    height: 15px;
+    
+}
+.inputbox {
+    background-color: #ffda00;
+    border-radius: 15px;
+    width: 350px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    /* border: 2px solid #ffda00 ; */
+}
+.inputbox input {
+    border: 0;
+    border-radius: 15px 0 0 15px;
+    height: 30px;
+    width: 300px;
+    margin: 2px;
+}
+
+.inputbox input:focus {
+    outline: none;
+}
+.inputbox img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.signin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.signin:hover{
+    cursor: pointer;
+}
