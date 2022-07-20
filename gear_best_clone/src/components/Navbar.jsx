@@ -1,15 +1,15 @@
-import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
 import React from "react";
 import Navbarcss from "./styles/Navbar.module.css";
 
 const Navbar = () => {
   return (
     <div>
-      <Box mt="1rem">
+      <Box mt="0.5rem">
         <Flex
           gap="2%"
           h="100px"
-          //   border="1px solid purple"
+            // border="1px solid purple"
           w="78%"
           margin="auto"
           justifyContent="space-between"
@@ -20,11 +20,13 @@ const Navbar = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Image
-              h="50px"
-              w="250px"
-              src="https://uidesign.gbtcdn.com/GB/images/promotion/2019/a_evan/Gearbest/logo_gearbest.png"
-            />
+            <Link href="/">
+              <Image
+                h="50px"
+                w="250px"
+                src="https://uidesign.gbtcdn.com/GB/images/promotion/2019/a_evan/Gearbest/logo_gearbest.png"
+              />
+            </Link>
           </Box>
           <Box w="70%">
             <Box
@@ -69,7 +71,7 @@ const Navbar = () => {
               </Flex>
             </Box>
             <Flex
-            //   border="1px solid red"
+              //   border="1px solid red"
               alignItems="center"
               gap="3rem"
               w="100%"
@@ -86,18 +88,22 @@ const Navbar = () => {
                   alt=""
                 />
               </div>
+              <Link href="/login">
+                <div className={Navbarcss.signin}>
+                  <i class="fa-solid fa-user"></i>
+                  <p>Sign In</p>
+                </div>
+              </Link>
               <div className={Navbarcss.signin}>
-                <i class="fa-solid fa-user"></i>
-                <p>Sign In</p>
+                <i class="fa-solid fa-heart"></i>
+                <p>Favourites</p>
               </div>
+              <Link href="/cart" >
               <div className={Navbarcss.signin}>
-              <i class="fa-solid fa-heart"></i>
-              <p>Favourites</p>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Cart</p>
               </div>
-              <div className={Navbarcss.signin}>
-              <i class="fa-solid fa-cart-shopping"></i>
-              <p>Cart</p>
-              </div>
+              </Link>
             </Flex>
           </Box>
         </Flex>
