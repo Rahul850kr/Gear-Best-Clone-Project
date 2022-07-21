@@ -51,7 +51,7 @@ const Navbar = () => {
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <i class="fa-solid fa-mobile-screen-button"></i>
+                  <i className="fa-solid fa-mobile-screen-button"></i>
                   <p>Save $3 with App ^</p>
                 </Box>
                 <Box>
@@ -90,17 +90,17 @@ const Navbar = () => {
               </div>
               <Link href="/login">
                 <div className={Navbarcss.signin}>
-                  <i class="fa-solid fa-user"></i>
+                  <i className="fa-solid fa-user"></i>
                   <p>Sign In</p>
                 </div>
               </Link>
               <div className={Navbarcss.signin}>
-                <i class="fa-solid fa-heart"></i>
+                <i className="fa-solid fa-heart"></i>
                 <p>Favourites</p>
               </div>
               <Link href="/cart" >
               <div className={Navbarcss.signin}>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i className="fa-solid fa-cart-shopping"></i>
                 <p>Cart</p>
               </div>
               </Link>
