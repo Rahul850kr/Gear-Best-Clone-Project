@@ -1,70 +1,73 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Gearbest Clone Project
 
-## Available Scripts
+Hello Everyone !🌏 I am a Rahul Kumar from Web17 batch in Masai School and I am presenting my individual project- clone of Gearbest, built during construct week of Unit-4.
 
-In the project directory, you can run:
 
-### `npm start`
+## Details : 🔭
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Gearbest is a Chinese online electronic ecommmerce website.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🚀 The link for the same is here : https://www.gearbest.com/
 
-### `npm test`
+## Pages & Features 👇
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ - ### Home Page : Nav Bar, carousel, products and offers slider.
+ - ### Login/Signup : User authentication to check whether user email and password match with details existing in the database.
+ - ### Product page : User can choose different types of products with best price.
+ - ### Cart Page : User can see all the items here which he or she want to buy and can also remove products from the cart .
+ - ### Description Page : User can see the detailed description of the product here and they can also buy product directly without going to the cart.
+ - ### Address Details : Users have to fill their delivery address details.
+ - ### Payment Page : Users can add their payment details.
+ - ### Order Successful: Once order is placed, confirmation will be shown and user can continue shopping further.
+ 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Client:** HTML5 , CSS3 , JAVASCRIPT, REACT,CHAKRA UI,ES6
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Server:** LOCAL STORAGE & HEROKU JSON SERVER
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Screenshots
+- ### Home Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Home%20Page.png?raw=true)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- ### Login Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Login%20Page.png?raw=true)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- ### Signup Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/SignUp%20Page.png?raw=true)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ### Product Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Product%20page1.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Product%20Page.png?raw=true)
 
-## Learn More
+- ### Description Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Description%20Page.png?raw=true)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- ### Cart Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Cart%20Page.png?raw=true)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- ### Address Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Shipping%20Page.png?raw=true)
 
-### Code Splitting
+- ### Payment Page
+![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Payment%20Page.png?raw=true)
+    
+## Lessons Learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- I became proficient in reading and understanding the code.
+- My code writing style became cleaner as i used ES6 and React to write code and used import export so that code become well structured.
+- I learned about many new things in React and Chakra Ui that i didn't know before.
+- My skills in React, JavaScript and DOM manipulation became better.
+- I also learned how to plan a project and execute that in a limited time frame.
 
-### Analyzing the Bundle Size
+### Live link of the Project:  https://gearbest-project.vercel.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### LinkedIn Profile link
+- #### Rahul Kumar : https://www.linkedin.com/in/rahul-kumar-a76323230/
 
-### Making a Progressive Web App
+### Github Repository : https://github.com/Rahul850kr/unadvised-ducks-1309/tree/master/gear_best_clone
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
