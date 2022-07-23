@@ -1,108 +1,124 @@
 import React, { useState } from "react";
-import { Box, Flex, Input, useToast } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
+import {
+  Alert,
+  AlertIcon,
+  Box,
+  Center,
+  Flex,
+  useToast,
+} from "@chakra-ui/react";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { AppContext } from "../Context/AppContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const init = {
   email: "",
   password: "",
 };
-const Sign = () => {
-  const [loginData, setLoginData] = useState(init);
-  const { signUp } = useContext(AppContext);
-  const toast = useToast();
-  const navigate=useNavigate();
+
+const Register = () => {
+  const { handleAddSignUp, signUp } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const [signupdata, setSignUpData] = useState(init);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    setLoginData({
-      ...loginData,
+    setSignUpData({
+      ...signupdata,
       [name]: value,
     });
-  };
-
-  const handleLogin = () => {
-    for (let i = 0; i < signUp.length; i++) {
-      if (
-        signUp[i].email == loginData.email &&
-        signUp[i].password == loginData.password
-      ) {
-        toast({
-          title: 'Login Successfull',
-          description: "Now Enjoy Shopping With Us",
-          status: 'success',
-          duration: 9000,
-          isClosable: true,
-        })
-        navigate("/")
-        return;
-      }
-    }
-    alert("Oops Wrong Cridentials!!!!!")
   };
 
   return (
     <>
       <Navbar />
       <Box
-        p="10px"
-        h="480px"
-        w="500px"
+        h="650px"
+        w="480px"
         boxShadow="rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
         ml="860px"
         mt="40px"
       >
-        <Box h="420px" w="420px" margin="auto">
-          <Box
-            h="30px"
-            width="23%"
-            fontWeight="bold"
-            color="#000"
-            fontSize="20px"
-            mt="20px"
-          >
-            SIGN IN
-          </Box>
+        <Box h="650px" w="420px" margin="auto">
+          <Center>
+            <Box
+              h="30px"
+              width="23%"
+              fontWeight="bold"
+              color="#000"
+              fontSize="20px"
+              mt="20px"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              p="20px"
+              _hover={{ color: "#666", cursor: "pointer" }}
+            >
+              REGISTER
+            </Box>
+          </Center>
 
-          <Box h="40px" width="100%" border="1px solid #AAAAAA" mt="20px">
+          <Box h="45px" width="100%" border="1px solid #AAAAAA" mt="20px">
             <input
-              name="email"
-              onChange={handleChange}
               style={{ width: "100%", height: "100%", padding: "0 0 0 10px" }}
               type="text"
               placeholder="Email"
+              name="email"
+              onChange={handleChange}
             />
           </Box>
-          <Box
-            h="40px"
+          <Box h="45px" width="100%" border="1px solid #AAAAAA" mt="20px">
+            <input
+              style={{ width: "100%", height: "100%", padding: "0 0 0 10px" }}
+              type="password"
+              placeholder="Create password"
+              name="password"
+              onChange={handleChange}
+            />
+          </Box>
+          <Box h="45px" width="100%" border="1px solid #AAAAAA" mt="20px">
+            <input
+              style={{ width: "100%", height: "100%", padding: "0 0 0 10px" }}
+              type="password"
+              placeholder="re-type Password"
+            />
+          </Box>
+          <Box h="45px" width="100%" border="1px solid #AAAAAA" mt="20px">
+            <input
+              style={{ width: "100%", height: "100%", padding: "0 0 0 10px" }}
+              type="password"
+              placeholder="Enter the code"
+            />
+          </Box>
+
+          <Flex
+            h="45px"
             width="100%"
             border="1px solid #AAAAAA"
             mt="20px"
-            mb="20px"
+            alignItems="center"
+            gap="1rem"
           >
-            <input
-              name="password"
-              onChange={handleChange}
-              style={{ width: "100%", height: "100%", padding: "0 0 0 10px" }}
-              type="password"
-              placeholder="Password"
-            />
-          </Box>
-          <Flex gap="2rem" alignItems="center">
             <Box p="0 0 0 10px">
               <input type="checkbox" />
             </Box>
-            <Box color="#000">Keep me signed in</Box>
-            <Box _hover={{cursor:"pointer",color:"blue.300"}} color="#000">Forgot your password</Box>
+            <Box>I agree to GearBest</Box>
           </Flex>
+          <Box h="43px" width="80%" mt="20px" color="#ff8a00" fontSize="13px">
+            <Box>Tip: To maximize online security, please do not reuse</Box>
+            <Box>passwords or choose easy to guess ones on Gearbest.</Box>
+          </Box>
 
           <Box
-            onClick={handleLogin}
-            _hover={{ cursor: "pointer" }}
+            onClick={() => {
+              handleAddSignUp(signupdata);
+             alert("Sign Up Successfull")
+              navigate("/Login");
+            }}
             h="50px"
             width="100%"
             border="1px solid #ffc439"
@@ -115,8 +131,10 @@ const Sign = () => {
             display="flex"
             justifyContent="center"
             alignItems="center"
+            _hover={{ cursor: "pointer" }}
           >
-            Sign In
+            {" "}
+            Register
           </Box>
           <Box
             h="30px"
@@ -150,4 +168,4 @@ const Sign = () => {
   );
 };
 
-export default Sign;
+export default Register;
