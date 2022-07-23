@@ -1,15 +1,41 @@
-import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  Portal,
+  Button,
+  Text,
+  Center,
+  Spacer,
+} from "@chakra-ui/react";
 import React from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../Context/AppContext";
 import Navbarcss from "./styles/Navbar.module.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const { cartData, handleDeleteCartData, handleTotal } =
+    useContext(AppContext);
   return (
     <div>
       <Box mt="0.5rem">
         <Flex
           gap="2%"
           h="100px"
-            // border="1px solid purple"
+          // border="1px solid purple"
           w="78%"
           margin="auto"
           justifyContent="space-between"
@@ -88,22 +114,118 @@ const Navbar = () => {
                   alt=""
                 />
               </div>
-              <Link href="/login">
-                <div className={Navbarcss.signin}>
-                  <i className="fa-solid fa-user"></i>
-                  <p>Sign In</p>
-                </div>
-              </Link>
+
+              <Popover>
+                <PopoverTrigger>
+                  <div className={Navbarcss.signin}>
+                    <i className="fa-solid fa-user"></i>
+                    <p>Sign In</p>
+                  </div>
+                </PopoverTrigger>
+                <Portal>
+                  <PopoverContent>
+                    <PopoverArrow />
+                    <PopoverHeader>Welcome to Gearbest</PopoverHeader>
+                    <PopoverCloseButton />
+                    <PopoverBody>
+                      <Button onClick={() => navigate("/Login")} bg="#FFDA00">
+                        Sign In
+                      </Button>
+                      <Text textAlign="center">Or</Text>
+                      <Button onClick={() => navigate("/SignUp")} bg="#007aff">
+                        Register
+                      </Button>
+                    </PopoverBody>
+                  </PopoverContent>
+                </Portal>
+              </Popover>
+
               <div className={Navbarcss.signin}>
                 <i className="fa-solid fa-heart"></i>
                 <p>Favourites</p>
               </div>
-              <Link href="/cart" >
-              <div className={Navbarcss.signin}>
-                <i className="fa-solid fa-cart-shopping"></i>
-                <p>Cart</p>
-              </div>
-              </Link>
+              <Popover>
+                <PopoverTrigger>
+                  <div className={Navbarcss.signin}>
+                    <i className="fa-solid fa-cart-shopping"></i>
+                    <p>Cart</p>
+                  </div>
+                </PopoverTrigger>
+                <Portal>
+                  <PopoverContent>
+                    <PopoverArrow />
+                    <PopoverHeader fontSize="30px" fontWeight="700">
+                      Your Cart
+                    </PopoverHeader>
+                    <PopoverCloseButton />
+                    <PopoverBody>
+                      {cartData.length > 0 ? (
+                        cartData.map((el) => {
+                          return (
+                            <Box h="120px" w="100%" mb="10px">
+                              <Flex h="100%" w="100%">
+                                <Box w="30%">
+                                  <img
+                                    height="10px"
+                                    w="20px"
+                                    src={el.img}
+                                    alt=""
+                                  />
+                                </Box>
+                                <Box w="70%">
+                                  <Text fontSize="10px">{el.name}</Text>
+                                  <Flex>
+                                    <Text color="#f30240">$ {el.price}</Text>
+                                    <Spacer />
+                                    <Image
+                                      onClick={() =>
+                                        handleDeleteCartData(el.id)
+                                      }
+                                      _hover={{ cursor: "pointer" }}
+                                      height="20px"
+                                      width="20px"
+                                      src="https://icon-library.com/images/delete-icon-png/delete-icon-png-19.jpg"
+                                      alt=""
+                                    />
+                                  </Flex>
+                                </Box>
+                              </Flex>
+                             
+                            </Box>
+                          )
+                          
+                        })
+                       
+                      ) : (
+                        <Box
+                          display="flex"
+                          justifyContent="center"
+                          alignItems="center"
+                          fontSize="40px"
+                          fontWeight="700"
+                        >
+                          {" "}
+                          Your Cart Is Empty{" "}
+                        </Box>
+                      )}
+                    </PopoverBody>
+                   <PopoverFooter>
+                   <Center>
+                        <Button
+                        disabled={cartData.length===0}
+                          onClick={() => {
+                            handleTotal(cartData);
+                            navigate("/Shipping");
+                          }}
+                          bg="#ffda00"
+                        >
+                          Checkout
+                        </Button>
+                      </Center>
+                   </PopoverFooter>
+                  </PopoverContent>
+                </Portal>
+              </Popover>
             </Flex>
           </Box>
         </Flex>

@@ -11,13 +11,16 @@ import {
   Collapse,
   SimpleGrid,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import BoxItem from "./BoxItem";
 import Homepagecss from "./styles/HomePageLayout.module.css";
-import axios from "axios"
+import axios from "axios";
 import ProductItem from "./ProductItem";
+import { Spinner } from "@chakra-ui/react";
+import { AppContext } from "../Context/AppContext";
+import { useNavigate } from "react-router-dom";
 let obj = {
   0: "https://uidesign.gbtcdn.com/GB/image/9746/1190x420AUSEK.jpg?imbypass=true",
   1: "https://uidesign.gbtcdn.com/GB/image/2019/20190226_7940/1190-420.jpg?impolicy=high",
@@ -31,12 +34,19 @@ const HomePageLayout = () => {
   // const [i, setI] = useState(0);
 
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const [data,setData] = useState([]);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { handleAddDesc, descData } = useContext(AppContext);
 
-  useEffect(()=>{
-    axios.get("https://json-gearbest.herokuapp.com/products").then(res=>setData(res.data))
-  },[])
+  useEffect(() => {
+    setLoading(true);
+    axios.get("https://json-gearbest.herokuapp.com/products").then((res) => {
+      setData(res.data);
+      setLoading(false);
+    });
+  }, []);
 
   return (
     <Box>
@@ -123,7 +133,10 @@ const HomePageLayout = () => {
               NEW ARRIVALS
             </Text>
           </Flex>
-          <Image h="90%" src="https://uidesign.gbtcdn.com/GB/image/8823/1190X420.jpg" />
+          <Image
+            h="90%"
+            src="https://uidesign.gbtcdn.com/GB/image/8823/1190X420.jpg"
+          />
         </Box>
       </Flex>
       <Box mt="20px" mb="50px">
@@ -203,12 +216,42 @@ const HomePageLayout = () => {
       </Box>
       <Box mb="50px">
         <Flex gap="1rem" w="78%" m="auto">
-          <BoxItem image="https://gloimg.gbtcdn.com/soa/gb/store/6866331803104505856/16503/goods_thumb_220-v2/f292f0869135.jpg" name="Original barbershop cordless professional hair clipper for men rechargeable beard hair trimmer fade haircut machine lithium Ion" stPrice="$ 47.04" price="$ 42.34" />
-          <BoxItem image="https://gloimg.gbtcdn.com/soa/gb/item/6900386065325158400/16569/goods_thumb_220-v1/7ad37c8d5c0c.jpg" name="Bezior Portable Air Compressor Electric Air Pump 0-120PSI 2000mAh Rechargeable Battery with LCD Screen for Bicycles Motorcycles Car Basketball" stPrice="$ 99.00" price="$ 34.99" />
-          <BoxItem image="https://gloimg.gbtcdn.com/soa/gb/item/6883820374342168576/16533/goods_thumb_220-v1/ea10750ca76a.jpg" name="Electric Mosquito Killer Lamp Insect Killer LED Mosquito Repellent Lamp Mute Anti Fly Trap Light Bug Zapper USB LED Night Light" stPrice="$ 32.00" price="$ 15.97" />
-          <BoxItem image="https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16569/goods_thumb_220-v1/f9b2e983da47.jpg" name="Original Xiaomi Mi Band 7 Pro With GPS Smart Bracelet AMOLED Screen Blood Oxygen Fitness Traker Waterproof Wristband" stPrice="$ 105.68" price="$ 77.99" />
-          <BoxItem image="https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16554/goods_thumb_220-v1/0c85760ac623.jpg" name="OnePlus 9RT 5G Global Rom  Snapdragon 888 6.62 inch 120Hz E4 AMOLED Display NFC Android 11 50MP Camera Warp Charge 65T Smartphone" stPrice="$ 759.00" price="$ 455.00" />
-          <BoxItem image="https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16539/goods_img-v1/7a6e1bdf0f46.jpg" name="Haylou RS4 smart watches Global version Blood oxygen monitor 12 Sport Models Heart Rate Monito Sleep monitor Custom watch face" stPrice="$ 99.00" price="$ 49.99" />
+          <BoxItem
+            image="https://gloimg.gbtcdn.com/soa/gb/store/6866331803104505856/16503/goods_thumb_220-v2/f292f0869135.jpg"
+            name="Original barbershop cordless professional hair clipper for men rechargeable beard hair trimmer fade haircut machine lithium Ion"
+            stPrice="$ 47.04"
+            price="$ 42.34"
+          />
+          <BoxItem
+            image="https://gloimg.gbtcdn.com/soa/gb/item/6900386065325158400/16569/goods_thumb_220-v1/7ad37c8d5c0c.jpg"
+            name="Bezior Portable Air Compressor Electric Air Pump 0-120PSI 2000mAh Rechargeable Battery with LCD Screen for Bicycles Motorcycles Car Basketball"
+            stPrice="$ 99.00"
+            price="$ 34.99"
+          />
+          <BoxItem
+            image="https://gloimg.gbtcdn.com/soa/gb/item/6883820374342168576/16533/goods_thumb_220-v1/ea10750ca76a.jpg"
+            name="Electric Mosquito Killer Lamp Insect Killer LED Mosquito Repellent Lamp Mute Anti Fly Trap Light Bug Zapper USB LED Night Light"
+            stPrice="$ 32.00"
+            price="$ 15.97"
+          />
+          <BoxItem
+            image="https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16569/goods_thumb_220-v1/f9b2e983da47.jpg"
+            name="Original Xiaomi Mi Band 7 Pro With GPS Smart Bracelet AMOLED Screen Blood Oxygen Fitness Traker Waterproof Wristband"
+            stPrice="$ 105.68"
+            price="$ 77.99"
+          />
+          <BoxItem
+            image="https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16554/goods_thumb_220-v1/0c85760ac623.jpg"
+            name="OnePlus 9RT 5G Global Rom  Snapdragon 888 6.62 inch 120Hz E4 AMOLED Display NFC Android 11 50MP Camera Warp Charge 65T Smartphone"
+            stPrice="$ 759.00"
+            price="$ 455.00"
+          />
+          <BoxItem
+            image="https://gloimg.gbtcdn.com/soa/gb/item/6870745450383863808/16539/goods_img-v1/7a6e1bdf0f46.jpg"
+            name="Haylou RS4 smart watches Global version Blood oxygen monitor 12 Sport Models Heart Rate Monito Sleep monitor Custom watch face"
+            stPrice="$ 99.00"
+            price="$ 49.99"
+          />
         </Flex>
       </Box>
       <Box
@@ -222,15 +265,42 @@ const HomePageLayout = () => {
       >
         <Image
           className={Homepagecss.bagicon}
-          src="https://st3.depositphotos.com/18270392/37556/v/950/depositphotos_375564372-stock-illustration-quality-check-ribbon-icon-vector.jpg?forcejpeg=true" />
+          src="https://st3.depositphotos.com/18270392/37556/v/950/depositphotos_375564372-stock-illustration-quality-check-ribbon-icon-vector.jpg?forcejpeg=true"
+        />
         <Text ml="0.7rem" fontWeight="700" fontSize="20px">
           RECOMMENDED FOR YOU
         </Text>
       </Box>
-      <SimpleGrid spacing="1rem" w="78%" m="auto" columns={[2,3,5]} >
-          {data.map((el)=>(
-            <ProductItem key={el.id} name={el.name} image={el.img} price={el.price} />
-          ))}
+      <SimpleGrid spacing="1rem" w="78%" m="auto" columns={[2, 3, 5]}>
+        {loading ? (
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
+        ) : (
+          data.map((el) => (
+            <Box
+              onClick={() => {
+                handleAddDesc(el);
+                console.log(descData);
+                navigate("/Description");
+              }}
+              _hover={{ boxShadow: "" }}
+              h="340px"
+              w="210px"
+            >
+              <ProductItem
+                key={el.id}
+                name={el.name}
+                image={el.img}
+                price={el.price}
+              />
+            </Box>
+          ))
+        )}
       </SimpleGrid>
     </Box>
   );

@@ -6,6 +6,8 @@ import Homepage from './Homepage'
 import Login from './Login'
 import Payment from './Payment'
 import Shipping from './Shipping'
+import SignUp from "./SignUp"
+
 
 const AllRoutes = () => {
   return (
@@ -15,6 +17,7 @@ const AllRoutes = () => {
         <Route path="/description" element={<Description/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/payment" element={<Payment/>} />
+        <Route path="/signup" element={<SignUp/>}/>
         <Route path="/shipping" element={<Shipping/>} />
     </Routes>
   )
