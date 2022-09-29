@@ -32,29 +32,29 @@ Gearbest is a Chinese online electronic ecommmerce website.
 
 ## Screenshots
 - ### Home Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Home%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Home%20Page.png?raw=true)
 
 - ### Login Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Login%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Login%20Page.png?raw=true)
 
 - ### Signup Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/SignUp%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/SignUp%20Page.png?raw=true)
 
 - ### Product Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Product%20page1.png?raw=true)
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Product%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Product%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Product%20page1.png?raw=true)
 
 - ### Description Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Description%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Description%20Page.png?raw=true)
 
 - ### Cart Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Cart%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Cart%20Page.png?raw=true)
 
 - ### Address Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Shipping%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Shipping%20Page.png?raw=true)
 
 - ### Payment Page
-![App Screenshot](https://github.com/Rahul850kr/unadvised-ducks-1309/blob/master/gear_best_clone/ScreenShots%20of%20Project/Payment%20Page.png?raw=true)
+![App Screenshot](https://github.com/Rahul850kr/Gear-Best-Clone-Project/blob/master/ScreenShots%20of%20Project/Payment%20Page.png?raw=true)
     
 ## Lessons Learned
 
