@@ -69,5 +69,5 @@ Gearbest is a Chinese online electronic ecommmerce website.
 ### LinkedIn Profile link
 - #### Rahul Kumar : https://www.linkedin.com/in/rahul-kumar-a76323230/
 
-### Github Repository : https://github.com/Rahul850kr/unadvised-ducks-1309/tree/master/gear_best_clone
+### Github Repository : https://github.com/Rahul850kr/Gear-Best-Clone-Project
 
